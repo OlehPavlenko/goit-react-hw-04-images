@@ -1,8 +1,8 @@
-import ImageItem from './ImageGalleryItem';
+import ImageItem from '../ImageGalleryItem/ImageGalleryItem';
 import { useState, useEffect } from 'react';
-import { LoaderBtn } from './Button';
-import Loading from './Loadmore';
-import { Modal } from './Modal';
+import { LoaderBtn } from '../Button/Button';
+import Loading from '../Loadmore/Loadmore';
+import { Modal } from '../Modal/Modal';
 import fetchImg from '../Api/GetImages';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 

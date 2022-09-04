@@ -1,18 +1,22 @@
-import { Grid } from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import { Oval } from 'react-loader-spinner';
 
-const loading = () => {
+
+
+const Loading = () => {
     return (
-        <Grid
-            height="80"
-            width="80"
-            radius="9"
-            color="green"
-            ariaLabel="three-dots-loading"
-            wrapperStyle
-            wrapperClass="Loading"
-        />
+    <Oval
+    height={80}
+    width={80}
+    color="#4fa94d"
+    wrapperStyle={{}}
+    wrapperClass=""
+    visible={true}
+    ariaLabel='oval-loading'
+    secondaryColor="#4fa94d"
+    strokeWidth={2}
+    strokeWidthSecondary={2}
+/>
     );
 };
 
-export default loading;
+export default Loading;
