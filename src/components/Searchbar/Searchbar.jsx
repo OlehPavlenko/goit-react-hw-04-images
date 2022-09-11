@@ -1,45 +1,21 @@
-import { useState } from 'react';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
-export const Searchbar = ({ onSubmit }) => {
-    const [searchterm, setSearchterm] = useState('');
-
-    const onChange = e => {
-        const { value } = e.currentTarget;
-        setSearchterm(value);
-    };
-
-    const onSumbit = e => {
-        e.preventDefault();
-        if (searchterm.trim() === '') {
-            Notify.failure('Введіть пошуковий запит');
-            return;
-        }
-        onSubmit(searchterm);
-        setSearchterm('');
-    };
-
+import s from './SearchBar.module.css';
+import { BiSearchAlt } from 'react-icons/bi';
+export const SearchBar = ({ onSubmit }) => {
     return (
-        <header className="Searchbar">
-            <form
-                className="SearchForm"
-                onSubmit={e => {
-                    onSumbit(e);
-                }}
-            >
-                <button type="submit" className="SearchForm-button">
-                    <span className="button-label"></span>
+        <header className={s.Searchbar}>
+            <form className={s.SearchForm} onSubmit={onSubmit}>
+                <button type="submit" className={s['SearchForm-button']}>
+                    <span className={s['SearchForm-button-label']}>Search</span>
+                    <BiSearchAlt size="25" color="#3f51b5" />
                 </button>
 
                 <input
-                    className="SearchForm-input"
+                    name="searchBar"
+                    className={s['SearchForm-input']}
                     type="text"
-                    name="searchterm"
                     autoComplete="off"
                     autoFocus
                     placeholder="Search images and photos"
-                    onChange={onChange}
-                    value={searchterm}
                 />
             </form>
         </header>
